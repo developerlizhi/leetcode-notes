@@ -15,10 +15,6 @@ import java.util.Map;
 public class Solution169 {
 
     public static void main(String[] args) {
-        ListNode head;
-        while (head != null) {
-            head = head.next;
-        }
     }
 
     /**

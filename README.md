@@ -18,11 +18,12 @@
 
 ```java
 for (ListNode p = head; p != null; p = p.next){
-     xxxxx
+     xxx
 }
 
 ListNode head;
 while (head != null) {
+    xxx
     head = head.next;
 }
 ```
