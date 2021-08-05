@@ -53,8 +53,8 @@ public class Solution001 {
      * @solution 哈希表
      * @url https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-solution/
      * @complexity 时间复杂度：O(n) 空间复杂度：O(n)
-     * 时间复杂度：O(n^2)，其中 n 是数组中的元素数量。最坏情况下数组中任意两个数都要被匹配一次。
-     * 空间复杂度：O(n)
+     * 时间复杂度：O(n)，其中 n 是数组中的元素数量。对于每一个元素 x，我们可以 O(1) 地寻找 target - x。
+     * 空间复杂度：O(n)，其中 n 是数组中的元素数量。主要为哈希表的开销。
      * @remark 注意到方法一的寻找 target - x 的时间复杂度过高，使用哈希表，可以将寻找 target - x 的时间复杂度降低到从 O(n) 降低到 O(1)。
      * 我们创建一个哈希表，对于每一个 x，都在哈希表中查找是否存在 target - x，然后将 x 存入哈希表中，只需要遍历一次，即可得出结果。
      * @hint 以空间换时间
