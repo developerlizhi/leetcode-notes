@@ -6,23 +6,13 @@ import java.util.Map;
 
 /**
  * @author developerlizhi
+ * @title leetcode - 001 - 两数之和
+ * @level EASY
+ * @url https://leetcode-cn.com/problems/two-sum/
+ * @solution 暴力枚举|哈希表
  * @date 2021-04-22 11:32:36
  */
 public class Solution001 {
-
-    //    示例 1：
-    //
-    //    输入：nums = [2,7,11,15], target = 9
-    //    输出：[0,1]
-    //    解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
-    //    示例 2：
-    //
-    //    输入：nums = [3,2,4], target = 6
-    //    输出：[1,2]
-    //    示例 3：
-    //
-    //    输入：nums = [3,3], target = 6
-    //    输出：[0,1]
 
     public static void main(String[] args) {
 
@@ -40,6 +30,14 @@ public class Solution001 {
         System.out.println(Arrays.toString(twoSum02(nums3, 6)));
     }
 
+    /**
+     * @solution 暴力枚举
+     * @url https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-solution/
+     * @complexity 时间复杂度：O(n^2) 空间复杂度：O(1)
+     * 时间复杂度：O(n^2)，其中 n 是数组中的元素数量。最坏情况下数组中任意两个数都要被匹配一次。
+     * 空间复杂度：O(1)
+     * @remark 通过暴力枚举，不断尝试找到所有的可能，效率最差，但却最简单。
+     */
     public static int[] twoSum01(int[] nums, int target) {
         for (int i = 0; i < nums.length - 1; i++) {
             for (int j = i + 1; j <= nums.length - 1; j++) {
@@ -51,6 +49,16 @@ public class Solution001 {
         throw new IllegalArgumentException("No two sum solution");
     }
 
+    /**
+     * @solution 哈希表
+     * @url https://leetcode-cn.com/problems/two-sum/solution/liang-shu-zhi-he-by-leetcode-solution/
+     * @complexity 时间复杂度：O(n) 空间复杂度：O(n)
+     * 时间复杂度：O(n^2)，其中 n 是数组中的元素数量。最坏情况下数组中任意两个数都要被匹配一次。
+     * 空间复杂度：O(n)
+     * @remark 注意到方法一的寻找 target - x 的时间复杂度过高，使用哈希表，可以将寻找 target - x 的时间复杂度降低到从 O(n) 降低到 O(1)。
+     * 我们创建一个哈希表，对于每一个 x，都在哈希表中查找是否存在 target - x，然后将 x 存入哈希表中，只需要遍历一次，即可得出结果。
+     * @hint 以空间换时间
+     */
     public static int[] twoSum02(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>(nums.length);
 
